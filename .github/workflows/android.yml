@@ -54,3 +54,5 @@ jobs:
         with:
           name: debug-apk
           path: app/build/outputs/apk/debug/*.apk
+          - name: Make gradlew executable
+        run: chmod +x ./gradlew
