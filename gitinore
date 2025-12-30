@@ -1,1 +1,12 @@
+# Gradle builds
+/build
+/.gradle
+.gradle/
+**/build/
 
+# IDE files (not used, but safe to ignore)
+/.idea
+
+# Mac/Win
+.DS_Store
+Thumbs.db
