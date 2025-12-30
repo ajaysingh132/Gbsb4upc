@@ -1,1 +1,14 @@
+// Root build file for shared configuration.
+// Keep this minimal to avoid duplicate responsibilities with app/build.gradle.
 
+buildscript {
+    // Intentionally left empty: pluginManagement and repositories are in settings.gradle (modern Gradle).
+}
+
+allprojects {
+    // No per-project repositories here (enforced by settings.gradle).
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.layout.buildDirectory
+}
