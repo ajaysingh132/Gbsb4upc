@@ -21,9 +21,9 @@ jobs:
       - name: Set up Java 17
         uses: actions/setup-java@v4
         with:
-          distribution: 'temurin'
-          java-version: '17'
-          cache: 'gradle'
+          distribution: temurin
+          java-version: 17
+          cache: gradle
 
       - name: Install Android SDK commandline tools
         run: |
@@ -34,7 +34,7 @@ jobs:
           unzip -q cmdline-tools.zip -d cmdline-tools
           mv cmdline-tools/cmdline-tools cmdline-tools/latest
           rm -f cmdline-tools.zip
-          echo "PATH=$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/platform-tools:$PATH" >> $GITHUB_ENV
+          echo "$ANDROID_SDK_ROOT/cmdline-tools/latest/bin" >> $GITHUB_PATH
 
       - name: Accept licenses and install SDK packages
         run: |
@@ -43,8 +43,6 @@ jobs:
 
       - name: Make gradlew executable
         run: chmod +x ./gradlew
-
-    
 
       - name: Build debug APK
         run: ./gradlew --no-daemon assembleDebug
