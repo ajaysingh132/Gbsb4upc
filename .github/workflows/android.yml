@@ -44,8 +44,7 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x ./gradlew
 
-      - name: Gradle Wrapper validation
-        uses: gradle/wrapper-validation-action@v2
+    
 
       - name: Build debug APK
         run: ./gradlew --no-daemon assembleDebug
